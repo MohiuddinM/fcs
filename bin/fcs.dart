@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fcs/fcs.dart';
+import 'package:fcs/src/log.dart';
 import 'package:quick_log/quick_log.dart';
 
 const channels = ['stable', 'beta', 'dev', 'master'];
@@ -16,7 +17,10 @@ extension ListX<T> on List<T?> {
 }
 
 void main(List<String> args) {
+  final minLogLevel = args.contains('-v') ? LogLevel.fine : LogLevel.info;
+  Logger.writer = FcsWriter(minLogLevel);
   LogWriter.enableInReleaseMode = true;
+
   final rootPath = Platform.environment['flutter_path'] ??
       File(Platform.resolvedExecutable).parent.path;
 

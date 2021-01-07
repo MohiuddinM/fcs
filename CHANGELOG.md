@@ -1,3 +1,7 @@
+## 0.2.1
+
+- modify logging
+
 ## 0.2.0
 
 - make null safe
