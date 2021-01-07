@@ -1,6 +1,6 @@
 name: fcs
 description: Application to quickly switch Flutter channels, without downloading and upgrading everytime
-version: 0.2.1
+version: 0.2.2
 homepage: https://github.com/MohiuddinM/fcs
 
 environment:
